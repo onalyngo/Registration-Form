@@ -1,0 +1,25 @@
+/* body {
+  overflow: hidden;
+} */
+
+.form-group.error input {
+    border-color: #dc3545;
+    background-color: #feccc9;
+}
+
+.form-group.success input {
+    border: 1px solid #ced4da; 
+}
+
+.legend.error{
+  color: #dc3545;
+}
+
+.legend.success {
+  color: #212529;
+}
+
+.table {
+  table-layout: fixed;
+  word-wrap: break-word;
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+		<link rel="stylesheet" href="style.css" />
+
+		<title>Register Now</title>
+	</head>
+	<body class="bg-dark mx-5 col-md-9 mx-auto">
+		<h2 class="text-center m-5 text-white">Registration Form</h2>
+		<div class="bg-light p-5">
+			<p><span class="text-danger">*</span>required fields</p>
+			<form id="regForm" class="row" action="/">
+				<div class="form-group col-sm-12 col-md-6">
+					<input type="text" class="form-control" name="firstname" id="fName" placeholder="First Name *" />
+				</div>
+				<div class="form-group col-sm-12 col-md-6">
+					<input type="text" class="form-control" name="lastname" id="lName" placeholder="Last Name *" />
+				</div>
+				<div class="form-group col-sm-12 col-md-6">
+					<input type="text" class="form-control" name="address" id="address" placeholder="Address *" />
+				</div>
+				<div class="form-group col-sm-12 col-md-6">
+					<input type="number" class="form-control" name="phone" id="phone" placeholder="Phone" />
+				</div>
+
+				<!-- AGE -->
+				<div class="form-group col-md-6 ageGroup">
+					<legend class="">Your age group *</legend>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="age" id="15-25" value="15-25" />
+						<label class="form-check-label" for="15-25">15-25</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="age" id="26-35" value="26-35" />
+						<label class="form-check-label" for="26-35">26-35</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="age" id="36-45" value="36-45" />
+						<label class="form-check-label" for="36-45">36-45</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="age" id="46-55" value="46-55" />
+						<label class="form-check-label" for="46-55">46-55</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="age" id="56+" value="56+" />
+						<label class="form-check-label" for="56+">56+</label>
+					</div>
+				</div>
+
+				<!-- How did you know about us? -->
+				<div class="form-group col-md-6 infoGroup">
+					<legend>How did you know about us? *</legend>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" name="info" id="google" value="Google" />
+						<label class="form-check-label" for="google">Google</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" name="info" id="colleagues" value="From Colleagues" />
+						<label class="form-check-label" for="colleagues">From Colleagues</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" name="info" id="ads" value="Advertisements" />
+						<label class="form-check-label" for="ads">Advertisements</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" name="info" id="socmed" value="Social Media Platforms" />
+						<label class="form-check-label" for="socmed">Social Media Platforms</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" name="info" id="others" value="" />
+						<label class="form-check-label" for="others">Others</label>
+					</div>
+
+					<input type="text" class="form-control mt-2" style="display: none" id="otherVal" name="other" placeholder="Others" />
+				</div>
+
+				<!-- Marital Status -->
+				<div class="form-group col-sm-12 col-md-6">
+					<select class="form-control" id="status">
+						<option value="N/A">-- Marital Status *--</option>
+						<option value="Single">Single</option>
+						<option value="Married">Married</option>
+						<option value="Divorced">Divorced</option>
+						<option value="Widow">Widow</option>
+					</select>
+				</div>
+
+				<!-- Preferred Brand -->
+				<div class="form-group col-sm-12 col-md-6">
+					<select class="form-control" id="brand">
+						<option value="N/A">-- Preferred Brand --</option>
+						<option value="Samsung">Samsung</option>
+						<option value="Huawei">Huawei</option>
+						<option value="Apple">Apple</option>
+						<option value="Dell">Dell</option>
+						<option value="ASUS">ASUS</option>
+					</select>
+				</div>
+
+				<div class="my-3 col-12">
+					<legend>You Account details:</legend>
+				</div>
+				<!-- Email -->
+				<div class="form-group col-sm-12 col-md-6">
+					<input type="email" class="form-control" id="email" placeholder="Email *" />
+				</div>
+				<div class="form-group col-sm-12 col-md-6">
+					<input type="email" class="form-control" id="retypedEmail" placeholder="Retype Email *" />
+				</div>
+
+				<!-- Password -->
+				<div class="form-group col-sm-12 col-md-5">
+					<input type="password" class="form-control" id="password" placeholder="Password *" autocomplete="off" />
+				</div>
+				<div class="form-group col-sm-12 col-md-5">
+					<input type="password" class="form-control" id="retypedPassword" placeholder="Retype Password *" autocomplete="off" />
+				</div>
+
+				<div class="col-sm-12 col-md-2">
+					<button type="button" class="btn btn-secondary" onclick="showPassword(this)">show password</button>
+				</div>
+
+				<div class="form-group col-12 mt-5">
+					<button type="submit" class="btn btn-success" id="submit" data-toggle="modal" data-target="#regModal" value="Submit">Submit</button>
+					<button type="reset" class="btn btn-danger" value="Reset">Reset</button>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#regModal">sample modal button</button>
+				</div>
+			</form>
+			<!-- Modal -->
+			<div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="regModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+					<div class="modal-content container-xl">
+						<div class="modal-header justify-content-center">
+							<h5 class="modal-title text-success" id="regModalLabel">Thank you for your registration!</h5>
+						</div>
+						<div class="modal-body row">
+							<table class="table table-borderless">
+								<tbody>
+									<tr>
+										<th scope="row">First & last name:</th>
+										<td id="showName"></td>
+									</tr>
+									<tr>
+										<th scope="row">Email:</th>
+										<td id="showEmail"></td>
+									</tr>
+									<tr>
+										<th scope="row">Address:</th>
+										<td id="showAdd"></td>
+									</tr>
+									<tr>
+										<th scope="row">Phone:</th>
+										<td id="showPhone"></td>
+									</tr>
+									<tr>
+										<th scope="row">Age group:</th>
+										<td id="showAge"></td>
+									</tr>
+									<tr>
+										<th scope="row">How did you find out about us?</th>
+										<td id="showInfo"></td>
+									</tr>
+									<tr>
+										<th scope="row">Marital status:</th>
+										<td id="showStatus"></td>
+									</tr>
+									<tr>
+										<th scope="row">Preferred brand:</th>
+										<td id="showBrand"></td>
+									</tr>
+								</tbody>
+							</table>
+							<p id="modal_body"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
