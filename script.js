@@ -12,7 +12,7 @@ function showPassword(e) {
 		inpPW.type = 'password'
 		rePW.type = 'password'
 	}
-}
+};
 
 // OTHER CHECKBOX
 const otherCheck = document.querySelector('#others')
@@ -27,7 +27,7 @@ otherCheck.addEventListener('change', () => {
 	}
 })
 
-// ON SUBMIT VALIDATION
+// ON SUBMIT VALIDATION - saving to a variable first
 const fName = document.getElementById('fName')
 const lName = document.getElementById('lName')
 const address = document.getElementById('address')
@@ -187,54 +187,44 @@ const showSuccess = (input) => {
 }
 
 const showError1 = () => {
-	// get the form-group element
 	const formGroupCheck = document.querySelector('.legend');
-	// add the error class
 	formGroupCheck.classList.add('error')
 	formGroupCheck.classList.remove('success')
 }
 
 const showSuccess1 = () => {
-	// get the form-group element
 	const formGroupCheck = document.querySelector('.legend');
-	// add the error class
 	formGroupCheck.classList.remove('error')
 	formGroupCheck.classList.add('success')
 }
 
 const showError2 = () => {
-	// get the form-group element
 	const formGroupCheck = document.querySelector('.legend1')
-	// add the error class
 	formGroupCheck.classList.add('error')
 	formGroupCheck.classList.remove('success')
 }
 
 const showSuccess2 = () => {
-	// get the form-group element
 	const formGroupCheck = document.querySelector('.legend1')
-	// add the error class
 	formGroupCheck.classList.remove('error')
 	formGroupCheck.classList.add('success')
 }
 
 const showError3 = () => {
-	// get the form-group element
 	const formGroupSelect = document.getElementById('status')
 	formGroupSelect.classList.add('error')
 	formGroupSelect.classList.remove('success')
 }
 
 const showSuccess3 = () => {
-	// get the form-group element
 	const formGroupSelect = document.getElementById('status')
-	// add the error class
 	formGroupSelect.classList.remove('error')
 	formGroupSelect.classList.add('success')
 }
 
 const form = document.getElementById('regForm')
 
+// Feedback feature to show either error or success instantly for "id" attribute
 form.addEventListener('input', function (e) {
 	switch (e.target.id) {
 		case 'fName':
@@ -264,6 +254,7 @@ form.addEventListener('input', function (e) {
 	}
 })
 
+// Feedback feature to show either error or success instantly for "name" attribute
 form.addEventListener('input', function (e) {
 	switch (e.target.name) {
 		case 'age':
@@ -275,6 +266,7 @@ form.addEventListener('input', function (e) {
 	}
 })
 
+// SUBMIT THE FORMS WITH VALIDATIONS
 form.addEventListener('submit', function (e) {
 	// prevent the form from submitting
 	e.preventDefault()
