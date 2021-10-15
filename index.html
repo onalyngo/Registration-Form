@@ -10,8 +10,8 @@
 
 		<title>Register Now</title>
 	</head>
-	<body class="bg-dark mx-5 col-md-9 mx-auto">
-		<h2 class="text-center m-5 text-white">Registration Form</h2>
+	<body class="bg-dark p-0 col-md-9 mx-auto">
+		<h2 class="text-center m-4 text-white">Registration Form</h2>
 		<div class="bg-light p-5">
 			<p><span class="text-danger">*</span>required fields</p>
 			<form id="regForm" class="row" action="/">
@@ -29,8 +29,8 @@
 				</div>
 
 				<!-- AGE -->
-				<div class="form-group col-md-6 ageGroup">
-					<legend class="">Your age group *</legend>
+				<div class="form-group col-md-6">
+					<legend class="legend">Your age group *</legend>
 					<div class="form-check">
 						<input class="form-check-input" type="radio" name="age" id="15-25" value="15-25" />
 						<label class="form-check-label" for="15-25">15-25</label>
@@ -54,8 +54,8 @@
 				</div>
 
 				<!-- How did you know about us? -->
-				<div class="form-group col-md-6 infoGroup">
-					<legend>How did you know about us? *</legend>
+				<div class="form-group col-md-6">
+					<legend class="legend1">How did you know about us? *</legend>
 					<div class="form-check">
 						<input class="form-check-input" type="checkbox" name="info" id="google" value="Google" />
 						<label class="form-check-label" for="google">Google</label>
@@ -82,8 +82,8 @@
 
 				<!-- Marital Status -->
 				<div class="form-group col-sm-12 col-md-6">
-					<select class="form-control" id="status">
-						<option value="N/A">-- Marital Status *--</option>
+					<select class="form-control" name="status" id="status">
+						<option value="">-- Marital Status * --</option>
 						<option value="Single">Single</option>
 						<option value="Married">Married</option>
 						<option value="Divorced">Divorced</option>
@@ -93,7 +93,7 @@
 
 				<!-- Preferred Brand -->
 				<div class="form-group col-sm-12 col-md-6">
-					<select class="form-control" id="brand">
+					<select class="form-control" name="brand" id="brand">
 						<option value="N/A">-- Preferred Brand --</option>
 						<option value="Samsung">Samsung</option>
 						<option value="Huawei">Huawei</option>
@@ -129,7 +129,7 @@
 				<div class="form-group col-12 mt-5">
 					<button type="submit" class="btn btn-success" id="submit" data-toggle="modal" data-target="#regModal" value="Submit">Submit</button>
 					<button type="reset" class="btn btn-danger" value="Reset">Reset</button>
-					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#regModal">sample modal button</button>
+					<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#regModal">sample modal button</button> -->
 				</div>
 			</form>
 			<!-- Modal -->

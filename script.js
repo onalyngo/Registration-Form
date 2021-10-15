@@ -35,7 +35,7 @@ const email1 = document.getElementById('email')
 const email2 = document.getElementById('retypedEmail')
 const password = document.getElementById('password')
 const password2 = document.getElementById('retypedPassword')
-
+const statusSel = document.getElementById('status')
 // The isRequired() function to check if the username is provided.
 // The showError() and showSuccess() functions to show the error and success indicator.
 // The function returns true if the field passes the checks.
@@ -76,17 +76,55 @@ const checkAddress = () => {
 	return valid
 }
 
-// const checkAge = () => {
-// 	let valid = false;
-// 	const ageChk = document.getElementsByName('age');
-// 	if(!isRequired(ageChk)) {
-// 		showError(age)
-// 	} else {
-// 		showSuccess(age)
-// 		valid = true
-// 	}
-// 	return valid;
-// };
+const checkAge = () => {
+	let valid = false;
+	const ageGrp = document.getElementsByName('age');
+	let ageValue;
+
+	for (const age of ageGrp) {
+		if(age.checked) {
+			ageValue = age.value;
+			showSuccess1(ageGrp)
+			break;
+		}
+	} if (!ageValue) {
+		showError1(ageGrp)
+		return false;
+	}
+	return valid;
+};
+
+const checkInfo = () => {
+	let valid = false
+	const infoGrp = document.getElementsByName('info')
+	let infoValue
+
+	for (const info of infoGrp) {
+		if (info.checked) {
+			infoValue = info.value
+			showSuccess2(infoGrp)
+			break
+		}
+	}
+	if (!infoValue) {
+		showError2(infoGrp)
+		return false
+	}
+	return valid
+}
+
+const checkStatus = () => {
+	let valid = false
+	const statusSelect = statusSel.value
+	
+	if (!isRequired(statusSelect)) {
+		showError3(statusSel)
+	} else {
+		showSuccess3(statusSel)
+		valid = true
+	}
+	return valid;
+}
 
 const checkEmail = () => {
 	let valid = false
@@ -141,28 +179,68 @@ const checkPassword2 = () => {
 }
 
 const isRequired = (value) => (value === '' ? false : true)
-// const isBetween = (length, min, max) => length < min || length > max ? false : true;
 
 const showError = (input) => {
 	// get the form-group element
-	const formGroupInput = input.parentElement
-	// const formGroupCheck = document.querySelector('.legend')
+	const formGroupInput = input.parentElement;
 	// add the error class
 	formGroupInput.classList.remove('success')
-	// formGroupCheck.classList.remove('success')
 	formGroupInput.classList.add('error')
-	// formGroupCheck.classList.add('error')
 }
 
 const showSuccess = (input) => {
 	// get the form-group element
-	const formGroupInput = input.parentElement
-	// const formGroupCheck = document.querySelector('.legend')
+	const formGroupInput = input.parentElement;
 	// add the error class
 	formGroupInput.classList.remove('error')
-	// formGroupCheck.classList.remove('error')
 	formGroupInput.classList.add('success')
-	// formGroupCheck.classList.add('success')
+}
+
+const showError1 = () => {
+	// get the form-group element
+	const formGroupCheck = document.querySelector('.legend');
+	// add the error class
+	formGroupCheck.classList.add('error')
+	formGroupCheck.classList.remove('success')
+}
+
+const showSuccess1 = () => {
+	// get the form-group element
+	const formGroupCheck = document.querySelector('.legend');
+	// add the error class
+	formGroupCheck.classList.remove('error')
+	formGroupCheck.classList.add('success')
+}
+
+const showError2 = () => {
+	// get the form-group element
+	const formGroupCheck = document.querySelector('.legend1')
+	// add the error class
+	formGroupCheck.classList.add('error')
+	formGroupCheck.classList.remove('success')
+}
+
+const showSuccess2 = () => {
+	// get the form-group element
+	const formGroupCheck = document.querySelector('.legend1')
+	// add the error class
+	formGroupCheck.classList.remove('error')
+	formGroupCheck.classList.add('success')
+}
+
+const showError3 = () => {
+	// get the form-group element
+	const formGroupSelect = document.getElementById('status')
+	formGroupSelect.classList.add('error')
+	formGroupSelect.classList.remove('success')
+}
+
+const showSuccess3 = () => {
+	// get the form-group element
+	const formGroupSelect = document.getElementById('status')
+	// add the error class
+	formGroupSelect.classList.remove('error')
+	formGroupSelect.classList.add('success')
 }
 
 const form = document.getElementById('regForm')
@@ -190,6 +268,20 @@ form.addEventListener('input', function (e) {
 		case 'retypedPassword':
 			checkPassword2()
 			break
+		case 'status':
+			checkStatus()
+			break
+	}
+})
+
+form.addEventListener('input', function (e) {
+	switch (e.target.name) {
+		case 'age':
+			checkAge()
+			break
+		case 'info':
+			checkInfo()
+			break
 	}
 })
 
@@ -204,11 +296,14 @@ form.addEventListener('submit', function (e) {
 		isEmailValid = checkEmail(),
 		isEmailValid2 = checkEmail2(),
 		isPWValid = checkPassword(),
-		isPWValid2 = checkPassword2();
+		isPWValid2 = checkPassword2(),
+		isAgeValid = checkAge(),
+		isInfoValid = checkInfo(),
+		isStatusValid = checkStatus();
 
-	let isFormValid = isFNameValid && isLNameValid && isAddValid && isEmailValid && isEmailValid2 && isPWValid && isPWValid2;
+	let isFormValid = isFNameValid && isLNameValid && isAddValid && isEmailValid && isEmailValid2 && isPWValid && isPWValid2 && isAgeValid && isInfoValid && isStatusValid;
 
-	if (isFormValid = true) {
+	if (isFormValid) {
 		$('#regModal').modal('show')
 	};
 })

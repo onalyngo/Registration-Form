@@ -3,23 +3,43 @@
 } */
 
 .form-group.error input {
-    border-color: #dc3545;
-    background-color: #feccc9;
+	border-color: #dc3545;
+	background-color: #feccc9;
 }
 
 .form-group.success input {
-    border: 1px solid #ced4da; 
+	border: 1px solid #ced4da;
 }
 
-.legend.error{
-  color: #dc3545;
+.legend.error {
+	color: #dc3545;
 }
 
 .legend.success {
-  color: #212529;
+	color: #212529;
+}
+
+.legend1.error {
+	color: #dc3545;
+}
+
+.legend1.success {
+	color: #212529;
+}
+
+#status.error {
+	border-color: #dc3545;
+	color: #dc3545;
+}
+
+#status.success {
+	border-color: #ced4da;
+	color: #495057;
+  /* color: green;
+  border-color: green; */
 }
 
 .table {
-  table-layout: fixed;
-  word-wrap: break-word;
+	table-layout: fixed;
+	word-wrap: break-word;
 }
