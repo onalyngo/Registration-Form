@@ -36,7 +36,8 @@ const email2 = document.getElementById('retypedEmail')
 const password = document.getElementById('password')
 const password2 = document.getElementById('retypedPassword')
 const statusSel = document.getElementById('status')
-// The isRequired() function to check if the username is provided.
+
+// The isRequired() function to check if the value is provided.
 // The showError() and showSuccess() functions to show the error and success indicator.
 // The function returns true if the field passes the checks.
 
@@ -78,37 +79,26 @@ const checkAddress = () => {
 
 const checkAge = () => {
 	let valid = false;
-	const ageGrp = document.getElementsByName('age');
-	let ageValue;
+	const age = document.querySelector('input[name="age"]:checked')
 
-	for (const age of ageGrp) {
-		if(age.checked) {
-			ageValue = age.value;
-			showSuccess1(ageGrp)
-			break;
-		}
-	} if (!ageValue) {
-		showError1(ageGrp)
-		return false;
+	if (!age) {
+		showError1(age)
+	} else {
+		showSuccess1(age)
+		valid = true
 	}
-	return valid;
+	return valid
 };
 
 const checkInfo = () => {
 	let valid = false
-	const infoGrp = document.getElementsByName('info')
-	let infoValue
+	const info = document.querySelector('input[name="info"]:checked')
 
-	for (const info of infoGrp) {
-		if (info.checked) {
-			infoValue = info.value
-			showSuccess2(infoGrp)
-			break
-		}
-	}
-	if (!infoValue) {
-		showError2(infoGrp)
-		return false
+	if (!info) {
+		showError2(info)
+	} else {
+		showSuccess2(info)
+		valid = true
 	}
 	return valid
 }
@@ -303,9 +293,11 @@ form.addEventListener('submit', function (e) {
 
 	let isFormValid = isFNameValid && isLNameValid && isAddValid && isEmailValid && isEmailValid2 && isPWValid && isPWValid2 && isAgeValid && isInfoValid && isStatusValid;
 
-	if (isFormValid) {
+	if (!isFormValid) {
+		$('#regModal').modal('hide')
+	} else {
 		$('#regModal').modal('show')
-	};
+	}
 })
 
 // PASS THE DATA INTO THE MODAL
