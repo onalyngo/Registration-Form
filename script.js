@@ -3,12 +3,12 @@ function showPassword(e) {
 	const inpPW = document.getElementById('password')
 	const rePW = document.getElementById('retypedPassword')
 
-	if (e.innerHTML == 'show password') {
-		e.innerHTML = 'hide password'
+	if (e.value == 'show password') {
+		e.value = 'hide password'
 		inpPW.type = 'text'
 		rePW.type = 'text'
 	} else {
-		e.innerHTML = 'show password'
+		e.value = 'show password'
 		inpPW.type = 'password'
 		rePW.type = 'password'
 	}
@@ -26,6 +26,55 @@ otherCheck.addEventListener('change', () => {
 		otherTxt.style.display = 'none'
 	}
 })
+
+// Email & Retyped Email Validation 
+$('#email').on('input', function () {
+	if ($('#retypedEmail').val() !== '' && $('#email').val() != $('#retypedEmail').val()) {
+		$('.errorMsg').show()
+		$('#confirmPassword').hide()
+		$('#confirmEmail').html('Email and Retyped Email does not match.')
+	} else {
+		$('.errorMsg').hide()
+		$('#confirmEmail').html('')
+	}
+})
+	
+$('#retypedEmail').on('input', function () {
+	if ($('#email').val() !== '' && $('#retypedEmail').val() != $('#email').val()) {
+		$('.errorMsg').show()
+		$('#confirmPassword').hide()
+		$('#confirmEmail').html('Email and Retyped Email does not match.')
+	} else {
+		$('.errorMsg').hide()
+		$('#confirmEmail').html('')
+	}
+})
+
+// Password & Retyped Password Validation 
+$('#password').on('input', function () {
+	if ($('#retypedPassword').val() !== '' && $('#password').val() != $('#retypedPassword').val()) {
+		$('.errorMsg').show()
+		$('#confirmPassword').show()
+		$('#confirmPassword').html('Password and Retyped Password does not match.')
+	} else {
+		$('.errorMsg').hide()
+		$('#confirmPassword').html('')
+	}
+})
+	
+$('#retypedPassword').on('input', function () {
+	if ($('#password').val() !== '' && $('#retypedPassword').val() != $('#password').val()) {
+		$('.errorMsg').show()
+		$('#confirmPassword').show()
+		$('#confirmPassword').html('Password and Retyped Password does not match.')
+	} else {
+		$('.errorMsg').hide()
+		$('#confirmPassword').html('')
+	}
+})
+	
+
+
 
 // ON SUBMIT VALIDATION - saving to a variable first
 const fName = document.getElementById('fName')
@@ -301,12 +350,11 @@ $('#submit').click(function () {
 	let phone = $('#phone').val()
 	let age = $('input:radio:checked').val()
 
-	let info = $('input:checkbox:checked')
-		.map(function () {
-			return this.value
-		})
-		.toArray()
-
+	let info = [];
+	$('input:checkbox:checked').map(function () {
+			info.push($(this).val());
+	});
+		
 	let othersInfo = $('#otherVal').val()
 	let status = $('#status').val()
 	let brand = $('#brand').val()
@@ -324,5 +372,8 @@ $('#submit').click(function () {
 
 // RESET THE FORM WHEN MODAL CLOSE
 $('#regModal').on('hidden.bs.modal', function () {
-	$('#regForm').trigger('reset')
+	// $('#regForm').trigger('reset')
+	location.reload()
 })
+
+

@@ -77,7 +77,7 @@
 						<label class="form-check-label" for="others">Others</label>
 					</div>
 
-					<input type="text" class="form-control mt-2" style="display: none" id="otherVal" name="other" placeholder="Others" />
+					<input type="text" class="form-control mt-2" id="otherVal" name="other" placeholder="Others" />
 				</div>
 
 				<!-- Marital Status -->
@@ -115,20 +115,38 @@
 				</div>
 
 				<!-- Password -->
-				<div class="form-group col-sm-12 col-md-5">
-					<input type="password" class="form-control" id="password" placeholder="Password *" autocomplete="off" />
-				</div>
-				<div class="form-group col-sm-12 col-md-5">
-					<input type="password" class="form-control" id="retypedPassword" placeholder="Retype Password *" autocomplete="off" />
+				<div class="col-12 row">
+					<div class="form-group col-sm-12 col-md-5">
+						<input type="password" class="form-control" id="password" placeholder="Password *" autocomplete="off" />
+					</div>
+					<div class="form-group col-sm-12 col-md-5">
+						<input type="password" class="form-control" id="retypedPassword" placeholder="Retype Password *" autocomplete="off" />
+					</div>
+
+					<div class="col-sm-12 col-md-2">
+						<input type="button" class="btn btn-secondary" onclick="showPassword(this)" value="show password">
+					</div>
 				</div>
 
-				<div class="col-sm-12 col-md-2">
-					<button type="button" class="btn btn-secondary" onclick="showPassword(this)" >show password</button>
+				<div class="col-12 mt-5 mb-2">
+					<div class="errorMsg col-6 py-2 px-3">
+						<p class=" mb-0 p-0" id="confirmEmail"></p>
+						<p class="mb-0 p-0" id="confirmPassword">Password and Retyped Password does not match.</p>
+						<!-- <div id="passValidation">
+							<p class="mb-0 p-0">Password requirements:</p>
+							<ul class="mb-0">
+								<li>Password should have at least 8 characters long.</li>
+								<li>Password should contain at least 1 alphabetical charater.</li>
+								<li>Password should contain at least 1 number charater.</li>
+								<li>Password should contain at least 1 special character.</li>
+							</ul>
+						</div> -->
+					</div>
 				</div>
 
-				<div class="form-group col-12 mt-5">
+				<div class="form-group col-12 mt-2">
 					<button type="submit" class="btn btn-success" id="submit" data-target="#regModal" value="Submit">Submit</button>
-					<button type="reset" class="btn btn-danger" value="Reset">Reset</button>
+					<button type="reset" class="btn btn-danger reset" value="Reset">Reset</button>
 				</div>
 			</form>
 			<!-- Modal -->

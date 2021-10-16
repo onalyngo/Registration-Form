@@ -2,13 +2,29 @@
   overflow: hidden;
 } */
 
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+#otherVal{
+	display: none;
+}
+
+.errorMsg {
+	display: none;
+	color: maroon;
+	background-color: #feccc9;
+	border-radius: 5px;
+}
+
 .form-group.error input {
 	border-color: #dc3545;
 	background-color: #feccc9;
 }
 
 .form-group.success input {
-	border: 1px solid #ced4da;
+	/* border: 1px solid #ced4da; */
+	border: 1px solid lightgreen;
 }
 
 .legend.error {
