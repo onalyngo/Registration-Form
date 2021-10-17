@@ -1,6 +1,15 @@
-/* body {
-  overflow: hidden;
-} */
+body {
+   /* overflow: hidden; */
+  height: 100vh;
+ } 
+
+.bg-custom {
+	/* background: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12) ; */
+	background: linear-gradient(to bottom, #ccffff 0%, #ffffcc 100%);
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+}
 
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
@@ -15,6 +24,10 @@ input:-webkit-autofill:focus {
 	color: maroon;
 	background-color: #feccc9;
 	border-radius: 5px;
+}
+
+.passValidation {
+	display: none;
 }
 
 .form-group.error input {
@@ -43,13 +56,14 @@ input:-webkit-autofill:focus {
 	color: #212529;
 }
 
-#status.error {
+#gender.error {
 	border-color: #dc3545;
 	color: #dc3545;
 }
 
-#status.success {
-	border-color: #ced4da;
+#gender.success {
+	/* border-color: #ced4da; */
+	border: 1px solid lightgreen;
 	color: #495057;
 }
 

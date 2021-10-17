@@ -10,195 +10,196 @@
 
 		<title>Register Now</title>
 	</head>
-	<body class="bg-dark p-0 col-md-9 mx-auto">
-		<h2 class="text-center m-4 text-white">Registration Form</h2>
-		<div class="bg-light p-5">
-			<p><span class="text-danger">*</span>required fields</p>
-			<form id="regForm" class="row" action="/">
-				<div class="form-group col-sm-12 col-md-6">
-					<input type="text" class="form-control" name="firstname" id="fName" placeholder="First Name *" />
-				</div>
-				<div class="form-group col-sm-12 col-md-6">
-					<input type="text" class="form-control" name="lastname" id="lName" placeholder="Last Name *" />
-				</div>
-				<div class="form-group col-sm-12 col-md-6">
-					<input type="text" class="form-control" name="address" id="address" placeholder="Address *" />
-				</div>
-				<div class="form-group col-sm-12 col-md-6">
-					<input type="number" class="form-control" name="phone" id="phone" placeholder="Phone" />
-				</div>
+	<body class="bg-info"  >
+		<main class=" pt-4 col-md-10 col-lg-9 col-xl-8 col-sm-10 mx-auto">
 
-				<!-- AGE -->
-				<div class="form-group col-md-6">
-					<legend class="legend">Your age group *</legend>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="age" id="15-25" value="15-25" />
-						<label class="form-check-label" for="15-25">15-25</label>
+			<h2 class="text-center m-4 text-white">Enrollment Form</h2>
+			<div class="bg-custom container-xl pt-5 pb-3 px-5">
+				<!-- <p><span class="text-danger">*</span>required fields</p> -->
+				<form id="regForm" class="row" action="/">
+					<div class="form-group col-sm-12 col-md-6">
+						<input type="text" class="form-control" name="firstname" id="fName" placeholder="First Name *" />
 					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="age" id="26-35" value="26-35" />
-						<label class="form-check-label" for="26-35">26-35</label>
+					<div class="form-group col-sm-12 col-md-6">
+						<input type="text" class="form-control" name="lastname" id="lName" placeholder="Last Name *" />
 					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="age" id="36-45" value="36-45" />
-						<label class="form-check-label" for="36-45">36-45</label>
+					<div class="form-group col-sm-12 col-md-6">
+						<input type="text" class="form-control" name="address" id="address" placeholder="Address *" />
 					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="age" id="46-55" value="46-55" />
-						<label class="form-check-label" for="46-55">46-55</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="age" id="56+" value="56+" />
-						<label class="form-check-label" for="56+">56+</label>
-					</div>
-				</div>
-
-				<!-- How did you know about us? -->
-				<div class="form-group col-md-6">
-					<legend class="legend1">How did you know about us? *</legend>
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" name="info" id="google" value="Google" />
-						<label class="form-check-label" for="google">Google</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" name="info" id="colleagues" value="From Colleagues" />
-						<label class="form-check-label" for="colleagues">From Colleagues</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" name="info" id="ads" value="Advertisements" />
-						<label class="form-check-label" for="ads">Advertisements</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" name="info" id="socmed" value="Social Media Platforms" />
-						<label class="form-check-label" for="socmed">Social Media Platforms</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" name="info" id="others" value="" />
-						<label class="form-check-label" for="others">Others</label>
+					<div class="form-group col-sm-12 col-md-6">
+						<input type="number" class="form-control" name="phone" id="phone" placeholder="Contact Number" />
 					</div>
 
-					<input type="text" class="form-control mt-2" id="otherVal" name="other" placeholder="Others" />
-				</div>
-
-				<!-- Marital Status -->
-				<div class="form-group col-sm-12 col-md-6">
-					<select class="form-control" name="status" id="status">
-						<option value="">-- Marital Status * --</option>
-						<option value="Single">Single</option>
-						<option value="Married">Married</option>
-						<option value="Divorced">Divorced</option>
-						<option value="Widow">Widow</option>
-					</select>
-				</div>
-
-				<!-- Preferred Brand -->
-				<div class="form-group col-sm-12 col-md-6">
-					<select class="form-control" name="brand" id="brand">
-						<option value="N/A">-- Preferred Brand --</option>
-						<option value="Samsung">Samsung</option>
-						<option value="Huawei">Huawei</option>
-						<option value="Apple">Apple</option>
-						<option value="Dell">Dell</option>
-						<option value="ASUS">ASUS</option>
-					</select>
-				</div>
-
-				<div class="my-3 col-12">
-					<legend>You Account details:</legend>
-				</div>
-				<!-- Email -->
-				<div class="form-group col-sm-12 col-md-6">
-					<input type="email" class="form-control" id="email" placeholder="Email *" />
-				</div>
-				<div class="form-group col-sm-12 col-md-6">
-					<input type="email" class="form-control" id="retypedEmail" placeholder="Retype Email *" />
-				</div>
-
-				<!-- Password -->
-				<div class="col-12 row">
-					<div class="form-group col-sm-12 col-md-5">
-						<input type="password" class="form-control" id="password" placeholder="Password *" autocomplete="off" />
-					</div>
-					<div class="form-group col-sm-12 col-md-5">
-						<input type="password" class="form-control" id="retypedPassword" placeholder="Retype Password *" autocomplete="off" />
-					</div>
-
-					<div class="col-sm-12 col-md-2">
-						<input type="button" class="btn btn-secondary" onclick="showPassword(this)" value="show password">
-					</div>
-				</div>
-
-				<div class="col-12 mt-5 mb-2">
-					<div class="errorMsg col-6 py-2 px-3">
-						<p class=" mb-0 p-0" id="confirmEmail"></p>
-						<p class="mb-0 p-0" id="confirmPassword">Password and Retyped Password does not match.</p>
-						<!-- <div id="passValidation">
-							<p class="mb-0 p-0">Password requirements:</p>
-							<ul class="mb-0">
-								<li>Password should have at least 8 characters long.</li>
-								<li>Password should contain at least 1 alphabetical charater.</li>
-								<li>Password should contain at least 1 number charater.</li>
-								<li>Password should contain at least 1 special character.</li>
-							</ul>
-						</div> -->
-					</div>
-				</div>
-
-				<div class="form-group col-12 mt-2">
-					<button type="submit" class="btn btn-success" id="submit" data-target="#regModal" value="Submit">Submit</button>
-					<button type="reset" class="btn btn-danger reset" value="Reset">Reset</button>
-				</div>
-			</form>
-			<!-- Modal -->
-			<div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="regModalLabel" aria-hidden="true">
-				<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-					<div class="modal-content container-xl">
-						<div class="modal-header justify-content-center">
-							<h5 class="modal-title text-success" id="regModalLabel">Thank you for your registration!</h5>
+					<!-- Course -->
+					<div class="form-group col-md-6">
+						<legend class="legend">Select Course Program *</legend>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="course" id="com" value="Communication" />
+							<label class="form-check-label" for="com">Communication</label>
 						</div>
-						<div class="modal-body row">
-							<table class="table table-borderless">
-								<tbody>
-									<tr>
-										<th scope="row">First & last name:</th>
-										<td id="showName"></td>
-									</tr>
-									<tr>
-										<th scope="row">Email:</th>
-										<td id="showEmail"></td>
-									</tr>
-									<tr>
-										<th scope="row">Address:</th>
-										<td id="showAdd"></td>
-									</tr>
-									<tr>
-										<th scope="row">Phone:</th>
-										<td id="showPhone"></td>
-									</tr>
-									<tr>
-										<th scope="row">Age group:</th>
-										<td id="showAge"></td>
-									</tr>
-									<tr>
-										<th scope="row">How did you find out about us?</th>
-										<td id="showInfo"></td>
-									</tr>
-									<tr>
-										<th scope="row">Marital status:</th>
-										<td id="showStatus"></td>
-									</tr>
-									<tr>
-										<th scope="row">Preferred brand:</th>
-										<td id="showBrand"></td>
-									</tr>
-								</tbody>
-							</table>
-							<p id="modal_body"></p>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="course" id="civilEng" value="Civil Engineering" />
+							<label class="form-check-label" for="civilEng">Civil Engineering</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="course" id="infoTech" value="Information Technology" />
+							<label class="form-check-label" for="infoTech">Information Technology</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="course" id="marketing" value="Marketing" />
+							<label class="form-check-label" for="marketing">Marketing</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="course" id="nurse" value="Nursing" />
+							<label class="form-check-label" for="nurse">Nursing</label>
+						</div>
+					</div>
+
+					<!-- Distance Learning Modality -->
+					<div class="form-group col-md-6">
+						<legend class="legend1">Preferred distance learning modality/ies: *</legend>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="info" id="online" value="Online Learning" />
+							<label class="form-check-label" for="online">Online Learning</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="info" id="printed" value="Modular Leaning (Printed)" />
+							<label class="form-check-label" for="printed">Modular Leaning (Printed)</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="info" id="digital" value="Modular Leaning (Digital)" />
+							<label class="form-check-label" for="digital">Modular Leaning (Digital)</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="info" id="combination" value="Combination of Face to Face with other modalities" />
+							<label class="form-check-label" for="combination">Combination of Face to Face with other modalities</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="info" id="others" value="" />
+							<label class="form-check-label" for="others">Others</label>
+						</div>
+
+						<input type="text" class="form-control mt-2" id="otherVal" name="other" placeholder="Others" />
+					</div>
+
+					<!-- Gender -->
+					<div class="form-group col-sm-12 col-md-6">
+						<select class="form-control" name="gender" id="gender">
+							<option value="">-- Gender * --</option>
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+						</select>
+					</div>
+
+					<!-- Preferred Time -->
+					<div class="form-group col-sm-12 col-md-6">
+						<select class="form-control" name="time" id="time">
+							<option value="N/A">-- Preferred Time --</option>
+							<option value="8AM - 12NN">8AM - 12NN</option>
+							<option value="1PM - 5PM">1PM - 5PM</option>
+							<option value="6PM - 10PM">6PM - 10PM</option>
+						</select>
+					</div>
+
+					<div class="my-3 col-12">
+						<legend>You Account details:</legend>
+					</div>
+					<!-- Email -->
+					<div class="form-group col-sm-12 col-md-6">
+						<input type="email" class="form-control" id="email" placeholder="Email *" />
+					</div>
+					<div class="form-group col-sm-12 col-md-6">
+						<input type="email" class="form-control" id="retypedEmail" placeholder="Retype Email *" />
+					</div>
+
+					<!-- Password -->
+					<div class="col-12 row">
+						<div class="form-group col-sm-12 col-md-6 col-lg-5 pr-md-0">
+							<input type="password" class="form-control" id="password" placeholder="Password *" autocomplete="off" />
+						</div>
+						<div class="form-group col-sm-12 col-md-6 col-lg-5 pr-lg-3 pr-md-0">
+							<input type="password" class="form-control" id="retypedPassword" placeholder="Retype Password *" autocomplete="off" />
+						</div>
+
+						<div class="col-sm-12 col-md-6 col-lg-2 px-lg-0 px-md-3 pl-sm-3">
+							<input type="button" class="btn btn-secondary" onclick="showPassword(this)" value="show password">
+						</div>
+					</div>
+
+					<div class="col-12 mt-2 mb-2 d-flex justify-content-center">
+						<div class="errorMsg col-6 py-2 px-3">
+							<p class=" mb-0 p-0" id="confirmEmail"></p>
+							<p class="mb-0 p-0" id="confirmPassword"></p>
+							<div id="passValidation">
+								<p class="mb-0 p-0">Password requirements:</p>
+								<ul class="mb-0">
+									<li>Password should have at least 8 characters long.</li>
+									<li>Password should contain at least 1 alphabetical charater.</li>
+									<li>Password should contain at least 1 number charater.</li>
+									<li>Password should contain at least 1 special character.</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group col-12 mt-2">
+						<button type="submit" class="btn btn-success" id="submit" data-target="#regModal" value="Submit">Submit</button>
+						<button type="reset" class="btn btn-danger reset" value="Reset">Reset</button>
+					</div>
+				</form>
+				<!-- Modal -->
+				<div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="regModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+						<div class="modal-content container-xl">
+							<div class="modal-header justify-content-center">
+								<h5 class="modal-title text-success" id="regModalLabel">You are now enrolled, thank you!</h5>
+							</div>
+							<div class="modal-body row">
+								<table class="table table-borderless">
+									<tbody>
+										<tr>
+											<th scope="row">First & Last Name:</th>
+											<td id="showName"></td>
+										</tr>
+										<tr>
+											<th scope="row">Email:</th>
+											<td id="showEmail"></td>
+										</tr>
+										<tr>
+											<th scope="row">Address:</th>
+											<td id="showAdd"></td>
+										</tr>
+										<tr>
+											<th scope="row">Phone:</th>
+											<td id="showPhone"></td>
+										</tr>
+										<tr>
+											<th scope="row">Course Program:</th>
+											<td id="showCourse"></td>
+										</tr>
+										<tr>
+											<th scope="row">Preferred distance learning modality/ies:</th>
+											<td id="showInfo"></td>
+										</tr>
+										<tr>
+											<th scope="row">Gender:</th>
+											<td id="showGender"></td>
+										</tr>
+										<tr>
+											<th scope="row">Preferred time:</th>
+											<td id="showPrefTime"></td>
+										</tr>
+									</tbody>
+								</table>
+								<p id="modal_body"></p>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</main>
+
+		<!-- <footer>/</footer> -->
 
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

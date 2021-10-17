@@ -44,6 +44,7 @@ $('#retypedEmail').on('input', function () {
 		$('.errorMsg').show()
 		$('#confirmPassword').hide()
 		$('#confirmEmail').html('Email and Retyped Email does not match.')
+		$('#passValidation').hide()
 	} else {
 		$('.errorMsg').hide()
 		$('#confirmEmail').html('')
@@ -56,6 +57,7 @@ $('#password').on('input', function () {
 		$('.errorMsg').show()
 		$('#confirmPassword').show()
 		$('#confirmPassword').html('Password and Retyped Password does not match.')
+		$('#passValidation').hide()
 	} else {
 		$('.errorMsg').hide()
 		$('#confirmPassword').html('')
@@ -67,13 +69,32 @@ $('#retypedPassword').on('input', function () {
 		$('.errorMsg').show()
 		$('#confirmPassword').show()
 		$('#confirmPassword').html('Password and Retyped Password does not match.')
+		$('#passValidation').hide()
 	} else {
 		$('.errorMsg').hide()
 		$('#confirmPassword').html('')
 	}
 })
-	
 
+// $('input[type=password]').keyup(function () {
+// 		let pw = $(this).val()
+// 		// validate the length
+// 		if (pw.length < 8) {
+// 			$('.errorMsg').show()
+// 			$('#passValidation').show()
+// 		} else {
+// 			$('.errorMsg').hide()
+// 			$('#passValidation').hide()
+// 		}
+// 		// validate the letter & number
+// 		if (pw.match(/[A-z]/) && pw.match(/\d/)) {
+// 			$('.errorMsg').hide()
+// 			$('#passValidation').hide()
+// 		} else {
+// 			$('.errorMsg').show()
+// 			$('#passValidation').show()
+// 		}
+// 	})
 
 
 // ON SUBMIT VALIDATION - saving to a variable first
@@ -84,7 +105,7 @@ const email1 = document.getElementById('email')
 const email2 = document.getElementById('retypedEmail')
 const password = document.getElementById('password')
 const password2 = document.getElementById('retypedPassword')
-const statusSel = document.getElementById('status')
+const genderSel = document.getElementById('gender')
 
 // The isRequired() function to check if the value is provided.
 // The showError() and showSuccess() functions to show the error and success indicator.
@@ -126,14 +147,14 @@ const checkAddress = () => {
 	return valid
 }
 
-const checkAge = () => {
+const checkCourse = () => {
 	let valid = false;
-	const age = document.querySelector('input[name="age"]:checked')
+	const course = document.querySelector('input[name="course"]:checked')
 
-	if (!age) {
-		showError1(age)
+	if (!course) {
+		showError1(course)
 	} else {
-		showSuccess1(age)
+		showSuccess1(course)
 		valid = true
 	}
 	return valid
@@ -152,14 +173,14 @@ const checkInfo = () => {
 	return valid
 }
 
-const checkStatus = () => {
+const checkGender = () => {
 	let valid = false
-	const statusSelect = statusSel.value
+	const genderSelect = genderSel.value
 	
-	if (!isRequired(statusSelect)) {
-		showError3(statusSel)
+	if (!isRequired(genderSelect)) {
+		showError3(genderSel)
 	} else {
-		showSuccess3(statusSel)
+		showSuccess3(genderSel)
 		valid = true
 	}
 	return valid;
@@ -260,16 +281,39 @@ const showSuccess2 = () => {
 }
 
 const showError3 = () => {
-	const formGroupSelect = document.getElementById('status')
+	const formGroupSelect = document.getElementById('gender')
 	formGroupSelect.classList.add('error')
 	formGroupSelect.classList.remove('success')
 }
 
 const showSuccess3 = () => {
-	const formGroupSelect = document.getElementById('status')
+	const formGroupSelect = document.getElementById('gender')
 	formGroupSelect.classList.remove('error')
 	formGroupSelect.classList.add('success')
 }
+
+// const checkPWValid = () => {
+// 	// $('input[type=password]').keyup(function () {
+// 			let pw = document.querySelectorAll('input[type="password"]').value
+// 			// validate the length
+// 			if (pw.length < 8) {
+// 				$('.errorMsg').show()
+// 				$('#passValidation').show()
+// 			} else {
+// 				$('.errorMsg').hide()
+// 				$('#passValidation').hide()
+// 			}
+// 			// validate the letter & number
+// 			if (pw.match(/[A-z]/) && pw.match(/\d/)) {
+// 				$('.errorMsg').hide()
+// 				$('#passValidation').hide()
+// 			} else {
+// 				$('.errorMsg').show()
+// 				$('#passValidation').show()
+// 			}
+// 		// })
+// }
+
 
 const form = document.getElementById('regForm')
 
@@ -293,21 +337,23 @@ form.addEventListener('input', function (e) {
 			break
 		case 'password':
 			checkPassword()
+			// checkPWValid()
 			break
 		case 'retypedPassword':
 			checkPassword2()
 			break
-		case 'status':
-			checkStatus()
+		case 'gender':
+			checkGender()
 			break
+		
 	}
 })
 
 // Feedback feature to show either error or success instantly for "name" attribute
 form.addEventListener('input', function (e) {
 	switch (e.target.name) {
-		case 'age':
-			checkAge()
+		case 'course':
+			checkCourse()
 			break
 		case 'info':
 			checkInfo()
@@ -328,11 +374,12 @@ form.addEventListener('submit', function (e) {
 		isEmailValid2 = checkEmail2(),
 		isPWValid = checkPassword(),
 		isPWValid2 = checkPassword2(),
-		isAgeValid = checkAge(),
+		isCourseValid = checkCourse(),
 		isInfoValid = checkInfo(),
-		isStatusValid = checkStatus();
+		isGenderValid = checkGender()
+		
 
-	let isFormValid = isFNameValid && isLNameValid && isAddValid && isEmailValid && isEmailValid2 && isPWValid && isPWValid2 && isAgeValid && isInfoValid && isStatusValid;
+	let isFormValid = isFNameValid && isLNameValid && isAddValid && isEmailValid && isEmailValid2 && isPWValid && isPWValid2 && isCourseValid && isInfoValid && isGenderValid
 
 	if (!isFormValid) {
 		$('#regModal').modal('hide')
@@ -348,26 +395,26 @@ $('#submit').click(function () {
 	let email = $('#email').val()
 	let address = $('#address').val()
 	let phone = $('#phone').val()
-	let age = $('input:radio:checked').val()
+	let course = $('input:radio:checked').val()
 
 	let info = [];
 	$('input:checkbox:checked').map(function () {
 			info.push($(this).val());
 	});
-		
+	
 	let othersInfo = $('#otherVal').val()
-	let status = $('#status').val()
-	let brand = $('#brand').val()
+	let gender = $('#gender').val()
+	let time = $('#time').val()
 
 	$('#showName').html(fname + ' ' + lname)
 	$('#showEmail').html(email)
 	$('#showAdd').html(address)
 	$('#showPhone').html(phone)
-	$('#showAge').html(age)
+	$('#showCourse').html(course)
 	$('#showInfo').html('' + info)
 	$('#showInfo').append('<br />' + othersInfo)
-	$('#showStatus').html(status)
-	$('#showBrand').html(brand)
+	$('#showGender').html(gender)
+	$('#showPrefTime').html(time)
 })
 
 // RESET THE FORM WHEN MODAL CLOSE
