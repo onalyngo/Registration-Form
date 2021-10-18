@@ -1,5 +1,5 @@
 body {
-	height: 100vh;
+	height: 100%;
  } 
 
 .bg-image{
@@ -26,6 +26,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:focus {
     transition: background-color 600000s 0s, color 600000s 0s;
 }
+
 #otherVal{
 	display: none;
 }
@@ -83,7 +84,7 @@ input:-webkit-autofill:focus {
 
 .modal-content {
 	background: rgb(255,255,255);
-background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(204,255,255,1) 100%);
+	background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(204,255,255,1) 100%);
 }
 
 /* #regModal {
@@ -105,3 +106,33 @@ background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(204,255,255,1) 
       }
     }
 } */
+
+
+@media screen and (max-width: 1024px) {
+	.px-5 {
+		padding: 50px !important;
+	}
+  legend {
+    font-size: 22px;
+	/* font-weight: bold; */
+  }
+}
+
+@media screen and (max-width: 768px) {
+	.px-5 {
+		padding: 30px !important;
+	}
+  legend {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 375px){
+	.px-5 {
+		padding: 20px !important;
+	}
+	legend {
+		font-size: 17px;
+		font-weight: bold;
+	}
+}

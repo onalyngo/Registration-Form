@@ -4,18 +4,16 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+		<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
 		<link rel="stylesheet" href="style.css" />
 
 		<title>Register Now</title>
 	</head>
-	<body class="bg-image"  >
-		<main class=" pt-4 col-md-10 col-lg-9 col-xl-8 col-sm-10 mx-auto">
-
+	<body class="bg-image">
+		<main class="pt-4 col-md-10 col-lg-9 col-xl-8 col-sm-10 mx-auto">
 			<h2 class="text-center m-4 text-light">Enrollment Form</h2>
 			<div class="bg-custom container-xl pt-5 pb-3 px-5">
-				<!-- <p><span class="text-danger">*</span>required fields</p> -->
 				<form id="regForm" class="row" action="/">
 					<div class="form-group col-sm-12 col-md-6">
 						<input type="text" class="form-control" name="firstname" id="fName" placeholder="First Name *" />
@@ -101,17 +99,6 @@
 						</select>
 					</div>
 
-					<!-- <div class="form-group col-sm-12 col-md-6">
-						<button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							-- Preferred Time --
-						</button>
-						<div class="dropdown-menu form-control" aria-labelledby="dropdownMenuButton" name="time" id="time">
-							<option value="8AM - 12NN">8AM - 12NN</option>
-							<option value="1PM - 5PM">1PM - 5PM</option>
-							<option value="6PM - 10PM">6PM - 10PM</option>
-						</div>
-					</div> -->
-
 					<div class="my-3 col-12">
 						<legend>You Account details:</legend>
 					</div>
@@ -133,13 +120,13 @@
 						</div>
 
 						<div class="col-sm-12 col-md-6 col-lg-2 px-lg-0 px-md-3 pl-sm-3">
-							<input type="button" class="btn btn-secondary" onclick="showPassword(this)" value="show password">
+							<input type="button" class="btn btn-secondary" onclick="showPassword(this)" value="show password" />
 						</div>
 					</div>
 
 					<div class="col-12 mt-2 mb-2 d-flex justify-content-center">
 						<div class="errorMsg col-6 py-2 px-3">
-							<p class=" mb-0 p-0" id="confirmEmail"></p>
+							<p class="mb-0 p-0" id="confirmEmail"></p>
 							<p class="mb-0 p-0" id="confirmPassword"></p>
 							<div id="passValidation">
 								<p class="mb-0 p-0">Password requirements:</p>
@@ -211,8 +198,9 @@
 		</main>
 
 		<!-- <footer>/</footer> -->
-
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 		<script src="script.js"></script>

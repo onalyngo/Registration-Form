@@ -292,28 +292,65 @@ const showSuccess3 = () => {
 	formGroupSelect.classList.add('success')
 }
 
-// const checkPWValid = () => {
-// 	// $('input[type=password]').keyup(function () {
-// 			let pw = document.querySelectorAll('input[type="password"]').value
-// 			// validate the length
-// 			if (pw.length < 8) {
-// 				$('.errorMsg').show()
-// 				$('#passValidation').show()
-// 			} else {
-// 				$('.errorMsg').hide()
-// 				$('#passValidation').hide()
-// 			}
-// 			// validate the letter & number
-// 			if (pw.match(/[A-z]/) && pw.match(/\d/)) {
-// 				$('.errorMsg').hide()
-// 				$('#passValidation').hide()
-// 			} else {
-// 				$('.errorMsg').show()
-// 				$('#passValidation').show()
-// 			}
-// 		// })
-// }
+const checkPWValid = () => {
+	let valid = false;
+	let pw = document.getElementById("password").value
+	// validate the length
+	if (pw.length < 8) {
+		$('.errorMsg').show('slow')
+		$('#passValidation').show('slow')
+		
+	} else {
+		$('.errorMsg').hide('slow')
+		$('#passValidation').hide('slow')
+		valid = true
+	}
+	// validate the letter & number
+	if (pw.match(/[A-z]/) && pw.match(/\d/)) {
+		$('.errorMsg').hide()
+		$('#passValidation').hide('slow')
+		valid = true
+	} else {
+		$('#passValidation').show('slow')
+	setTimeout(function () {
+		$('#passValidation').hide('slow')
+		$('.errorMsg').hide('slow')
+	}, 3000)
+	}
+	return valid
+}
 
+// console.log(checkPWValid())
+
+const checkPWValid2 = () => {
+	let valid = false;
+	let pw = document.getElementById('retypedPassword').value
+	// validate the length
+	if (pw.length < 8) {
+		$('.errorMsg').show('slow')
+		$('#passValidation').show('slow')
+		
+	} else {
+		$('.errorMsg').hide('slow')
+		$('#passValidation').hide('slow')
+		valid = true
+	}
+	// validate the letter & number
+	if (pw.match(/[A-z]/) && pw.match(/\d/)) {
+		$('.errorMsg').hide('slow')
+		$('#passValidation').hide('slow')
+		valid = true
+	} else {
+		$('#passValidation').show('slow')
+		setTimeout(function () {
+			$('#passValidation').hide('slow')
+			$('.errorMsg').hide('slow')
+		}, 3000)
+	}
+	return valid
+}
+
+// console.log(checkPWValid2())
 
 const form = document.getElementById('regForm')
 
@@ -341,6 +378,7 @@ form.addEventListener('input', function (e) {
 			break
 		case 'retypedPassword':
 			checkPassword2()
+			// checkPWValid2()
 			break
 		case 'gender':
 			checkGender()
@@ -368,18 +406,19 @@ form.addEventListener('submit', function (e) {
 
 	// validate forms
 	let isFNameValid = checkfName(),
-		isLNameValid = checklName(),
-		isAddValid = checkAddress(),
-		isEmailValid = checkEmail(),
-		isEmailValid2 = checkEmail2(),
-		isPWValid = checkPassword(),
-		isPWValid2 = checkPassword2(),
-		isCourseValid = checkCourse(),
-		isInfoValid = checkInfo(),
-		isGenderValid = checkGender()
-		
+	isLNameValid = checklName(), 
+	isAddValid = checkAddress(), 
+	isEmailValid = checkEmail(), 
+	isEmailValid2 = checkEmail2(), 
+	isPWValid = checkPassword(), 
+	isPWValid2 = checkPassword2(), 
+	isCourseValid = checkCourse(), 
+	isInfoValid = checkInfo(), 
+	isGenderValid = checkGender(),
+	isCheckPWValid = checkPWValid(), 
+	isCheckPWValid2 = checkPWValid2();
 
-	let isFormValid = isFNameValid && isLNameValid && isAddValid && isEmailValid && isEmailValid2 && isPWValid && isPWValid2 && isCourseValid && isInfoValid && isGenderValid
+	let isFormValid = isFNameValid && isLNameValid && isAddValid && isEmailValid && isEmailValid2 && isPWValid && isPWValid2 && isCourseValid && isInfoValid && isGenderValid && isCheckPWValid && isCheckPWValid2;
 
 	if (!isFormValid) {
 		$('#regModal').modal('hide')
