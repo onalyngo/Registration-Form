@@ -292,63 +292,65 @@ const showSuccess3 = () => {
 	formGroupSelect.classList.add('success')
 }
 
+
 const checkPWValid = () => {
-	let valid = false;
-	let pw = document.getElementById("password").value
-	// validate the length
-	if (pw.length < 8) {
-		$('.errorMsg').show('slow')
-		$('#passValidation').show('slow')
-		
-	} else {
-		$('.errorMsg').hide('slow')
-		$('#passValidation').hide('slow')
-		valid = true
-	}
-	// validate the letter & number
-	if (pw.match(/[A-z]/) && pw.match(/\d/)) {
-		$('.errorMsg').hide()
-		$('#passValidation').hide('slow')
-		valid = true
-	} else {
-		$('#passValidation').show('slow')
-	setTimeout(function () {
-		$('#passValidation').hide('slow')
-		$('.errorMsg').hide('slow')
-	}, 3000)
-	}
-	return valid
+	let p = document.getElementById('password').value
+	var errors = []
+
+if (p.length < 8) {
+	errors.push('1')
+}
+if (p.search(/[A-z]/) < 0) {
+	errors.push('2')
+}
+if (p.search(/[0-9]/) < 0) {
+	errors.push('3')
+}
+if (p.search(/[\!\@\#\$\%\^\&\*\(\)\_\+\.\,\;\:\-]/) < 0) {
+	errors.push('4')
 }
 
-// console.log(checkPWValid())
-
-const checkPWValid2 = () => {
-	let valid = false;
-	let pw = document.getElementById('retypedPassword').value
-	// validate the length
-	if (pw.length < 8) {
+	if (errors.length > 0) {
 		$('.errorMsg').show('slow')
-		$('#passValidation').show('slow')
-		
-	} else {
-		$('.errorMsg').hide('slow')
-		$('#passValidation').hide('slow')
-		valid = true
-	}
-	// validate the letter & number
-	if (pw.match(/[A-z]/) && pw.match(/\d/)) {
-		$('.errorMsg').hide('slow')
-		$('#passValidation').hide('slow')
-		valid = true
-	} else {
 		$('#passValidation').show('slow')
 		setTimeout(function () {
 			$('#passValidation').hide('slow')
 			$('.errorMsg').hide('slow')
 		}, 3000)
+		return false;
 	}
-	return valid
+	return true;
 }
+
+const checkPWValid2 = () => {
+	let p = document.getElementById('retypedPassword').value
+	var errors = []
+
+	if (p.length < 8) {
+	 errors.push('1')
+	}
+	if (p.search(/[A-z]/) < 0) {
+		errors.push('2')
+	}
+	if (p.search(/[0-9]/) < 0) {
+		errors.push('3')
+	}
+	if (p.search(/[\!\@\#\$\%\^\&\*\(\)\_\+\.\,\;\:\-]/) < 0) {
+		errors.push('4')
+	}
+
+	if (errors.length > 0) {
+		$('.errorMsg').show('slow')
+		$('#passValidation').show('slow')
+		setTimeout(function () {
+			$('#passValidation').hide('slow')
+			$('.errorMsg').hide('slow')
+		}, 3000)
+		return false
+	}
+	return true;
+}
+
 
 // console.log(checkPWValid2())
 
