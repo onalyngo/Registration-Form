@@ -12,7 +12,7 @@ function showPassword(e) {
 		inpPW.type = 'password'
 		rePW.type = 'password'
 	}
-};
+}
 
 // OTHER CHECKBOX
 const otherCheck = document.querySelector('#others')
@@ -27,7 +27,7 @@ otherCheck.addEventListener('change', () => {
 	}
 })
 
-// Email & Retyped Email Validation 
+// Email & Retyped Email Validation
 $('#email').on('input', function () {
 	if ($('#retypedEmail').val() !== '' && $('#email').val() != $('#retypedEmail').val()) {
 		$('.errorMsg').show()
@@ -38,7 +38,7 @@ $('#email').on('input', function () {
 		$('#confirmEmail').html('')
 	}
 })
-	
+
 $('#retypedEmail').on('input', function () {
 	if ($('#email').val() !== '' && $('#retypedEmail').val() != $('#email').val()) {
 		$('.errorMsg').show()
@@ -51,7 +51,7 @@ $('#retypedEmail').on('input', function () {
 	}
 })
 
-// Password & Retyped Password Validation 
+// Password & Retyped Password Validation
 $('#password').on('input', function () {
 	if ($('#retypedPassword').val() !== '' && $('#password').val() != $('#retypedPassword').val()) {
 		$('.errorMsg').show()
@@ -63,7 +63,7 @@ $('#password').on('input', function () {
 		$('#confirmPassword').html('')
 	}
 })
-	
+
 $('#retypedPassword').on('input', function () {
 	if ($('#password').val() !== '' && $('#retypedPassword').val() != $('#password').val()) {
 		$('.errorMsg').show()
@@ -75,26 +75,6 @@ $('#retypedPassword').on('input', function () {
 		$('#confirmPassword').html('')
 	}
 })
-
-// $('input[type=password]').keyup(function () {
-// 		let pw = $(this).val()
-// 		// validate the length
-// 		if (pw.length < 8) {
-// 			$('.errorMsg').show()
-// 			$('#passValidation').show()
-// 		} else {
-// 			$('.errorMsg').hide()
-// 			$('#passValidation').hide()
-// 		}
-// 		// validate the letter & number
-// 		if (pw.match(/[A-z]/) && pw.match(/\d/)) {
-// 			$('.errorMsg').hide()
-// 			$('#passValidation').hide()
-// 		} else {
-// 			$('.errorMsg').show()
-// 			$('#passValidation').show()
-// 		}
-// 	})
 
 
 // ON SUBMIT VALIDATION - saving to a variable first
@@ -148,7 +128,7 @@ const checkAddress = () => {
 }
 
 const checkCourse = () => {
-	let valid = false;
+	let valid = false
 	const course = document.querySelector('input[name="course"]:checked')
 
 	if (!course) {
@@ -158,7 +138,7 @@ const checkCourse = () => {
 		valid = true
 	}
 	return valid
-};
+}
 
 const checkInfo = () => {
 	let valid = false
@@ -176,14 +156,14 @@ const checkInfo = () => {
 const checkGender = () => {
 	let valid = false
 	const genderSelect = genderSel.value
-	
+
 	if (!isRequired(genderSelect)) {
 		showError3(genderSel)
 	} else {
 		showSuccess3(genderSel)
 		valid = true
 	}
-	return valid;
+	return valid
 }
 
 const checkEmail = () => {
@@ -242,7 +222,7 @@ const isRequired = (value) => (value === '' ? false : true)
 
 const showError = (input) => {
 	// get the form-group element
-	const formGroupInput = input.parentElement;
+	const formGroupInput = input.parentElement
 	// add the error class
 	formGroupInput.classList.remove('success')
 	formGroupInput.classList.add('error')
@@ -250,20 +230,20 @@ const showError = (input) => {
 
 const showSuccess = (input) => {
 	// get the form-group element
-	const formGroupInput = input.parentElement;
+	const formGroupInput = input.parentElement
 	// add the error class
 	formGroupInput.classList.remove('error')
 	formGroupInput.classList.add('success')
 }
 
 const showError1 = () => {
-	const formGroupCheck = document.querySelector('.legend');
+	const formGroupCheck = document.querySelector('.legend')
 	formGroupCheck.classList.add('error')
 	formGroupCheck.classList.remove('success')
 }
 
 const showSuccess1 = () => {
-	const formGroupCheck = document.querySelector('.legend');
+	const formGroupCheck = document.querySelector('.legend')
 	formGroupCheck.classList.remove('error')
 	formGroupCheck.classList.add('success')
 }
@@ -292,42 +272,12 @@ const showSuccess3 = () => {
 	formGroupSelect.classList.add('success')
 }
 
-
 const checkPWValid = () => {
 	let p = document.getElementById('password').value
 	var errors = []
 
-if (p.length < 8) {
-	errors.push('1')
-}
-if (p.search(/[A-z]/) < 0) {
-	errors.push('2')
-}
-if (p.search(/[0-9]/) < 0) {
-	errors.push('3')
-}
-if (p.search(/[\!\@\#\$\%\^\&\*\(\)\_\+\.\,\;\:\-]/) < 0) {
-	errors.push('4')
-}
-
-	if (errors.length > 0) {
-		$('.errorMsg').show('slow')
-		$('#passValidation').show('slow')
-		setTimeout(function () {
-			$('#passValidation').hide('slow')
-			$('.errorMsg').hide('slow')
-		}, 3000)
-		return false;
-	}
-	return true;
-}
-
-const checkPWValid2 = () => {
-	let p = document.getElementById('retypedPassword').value
-	var errors = []
-
 	if (p.length < 8) {
-	 errors.push('1')
+		errors.push('1')
 	}
 	if (p.search(/[A-z]/) < 0) {
 		errors.push('2')
@@ -348,9 +298,37 @@ const checkPWValid2 = () => {
 		}, 3000)
 		return false
 	}
-	return true;
+	return true
 }
 
+const checkPWValid2 = () => {
+	let p = document.getElementById('retypedPassword').value
+	var errors = []
+
+	if (p.length < 8) {
+		errors.push('1')
+	}
+	if (p.search(/[A-z]/) < 0) {
+		errors.push('2')
+	}
+	if (p.search(/[0-9]/) < 0) {
+		errors.push('3')
+	}
+	if (p.search(/[\!\@\#\$\%\^\&\*\(\)\_\+\.\,\;\:\-]/) < 0) {
+		errors.push('4')
+	}
+
+	if (errors.length > 0) {
+		$('.errorMsg').show('slow')
+		$('#passValidation').show('slow')
+		setTimeout(function () {
+			$('#passValidation').hide('slow')
+			$('.errorMsg').hide('slow')
+		}, 3000)
+		return false
+	}
+	return true
+}
 
 // console.log(checkPWValid2())
 
@@ -376,16 +354,13 @@ form.addEventListener('input', function (e) {
 			break
 		case 'password':
 			checkPassword()
-			// checkPWValid()
 			break
 		case 'retypedPassword':
 			checkPassword2()
-			// checkPWValid2()
 			break
 		case 'gender':
 			checkGender()
 			break
-		
 	}
 })
 
@@ -408,19 +383,19 @@ form.addEventListener('submit', function (e) {
 
 	// validate forms
 	let isFNameValid = checkfName(),
-	isLNameValid = checklName(), 
-	isAddValid = checkAddress(), 
-	isEmailValid = checkEmail(), 
-	isEmailValid2 = checkEmail2(), 
-	isPWValid = checkPassword(), 
-	isPWValid2 = checkPassword2(), 
-	isCourseValid = checkCourse(), 
-	isInfoValid = checkInfo(), 
-	isGenderValid = checkGender(),
-	isCheckPWValid = checkPWValid(), 
-	isCheckPWValid2 = checkPWValid2();
+		isLNameValid = checklName(),
+		isAddValid = checkAddress(),
+		isEmailValid = checkEmail(),
+		isEmailValid2 = checkEmail2(),
+		isPWValid = checkPassword(),
+		isPWValid2 = checkPassword2(),
+		isCourseValid = checkCourse(),
+		isInfoValid = checkInfo(),
+		isGenderValid = checkGender(),
+		isCheckPWValid = checkPWValid(),
+		isCheckPWValid2 = checkPWValid2()
 
-	let isFormValid = isFNameValid && isLNameValid && isAddValid && isEmailValid && isEmailValid2 && isPWValid && isPWValid2 && isCourseValid && isInfoValid && isGenderValid && isCheckPWValid && isCheckPWValid2;
+	let isFormValid = isFNameValid && isLNameValid && isAddValid && isEmailValid && isEmailValid2 && isPWValid && isPWValid2 && isCourseValid && isInfoValid && isGenderValid && isCheckPWValid && isCheckPWValid2
 
 	if (!isFormValid) {
 		$('#regModal').modal('hide')
@@ -438,11 +413,11 @@ $('#submit').click(function () {
 	let phone = $('#phone').val()
 	let course = $('input:radio:checked').val()
 
-	let info = [];
+	let info = []
 	$('input:checkbox:checked').map(function () {
-			info.push($(this).val());
-	});
-	
+		info.push($(this).val())
+	})
+
 	let othersInfo = $('#otherVal').val()
 	let gender = $('#gender').val()
 	let time = $('#time').val()
@@ -463,5 +438,3 @@ $('#regModal').on('hidden.bs.modal', function () {
 	// $('#regForm').trigger('reset')
 	location.reload()
 })
-
-
