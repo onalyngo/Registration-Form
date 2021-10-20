@@ -15,17 +15,39 @@
 			<h2 class="text-center m-4 text-light">Enrollment Form</h2>
 			<div class="bg-custom container-xl pt-5 pb-3 px-5">
 				<form id="regForm" class="row" action="/">
-					<div class="form-group col-sm-12 col-md-6">
-						<input type="text" class="form-control" name="firstname" id="fName" placeholder="First Name *" />
+					<div class="form-group col-sm-12 col-md-4">
+						<input type="text" class="form-control" name="firstname" id="fName" placeholder="First Name *" autocomplete="off"/>
+					</div>
+					<div class="form-group col-sm-12 col-md-4">
+						<input type="text" class="form-control" name="middlename" id="mName" placeholder="Middle Name *" autocomplete="off"/>
+					</div>
+					<div class="form-group col-sm-12 col-md-4">
+						<input type="text" class="form-control" name="lastname" id="lName" placeholder="Last Name *" autocomplete="off"/>
 					</div>
 					<div class="form-group col-sm-12 col-md-6">
-						<input type="text" class="form-control" name="lastname" id="lName" placeholder="Last Name *" />
+						<select class="form-control" name="gender" id="gender">
+							<option value="" >-- Gender * --</option>
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+						</select>
 					</div>
 					<div class="form-group col-sm-12 col-md-6">
-						<input type="text" class="form-control" name="address" id="address" placeholder="Address *" />
+						<input type="text" class="form-control" name="address" id="address" placeholder="Address *" autocomplete="off"/>
 					</div>
 					<div class="form-group col-sm-12 col-md-6">
 						<input type="number" class="form-control" name="phone" id="phone" placeholder="Contact Number" />
+					</div>
+
+					
+
+					<!-- Preferred Time -->
+					<div class="form-group col-sm-12 col-md-6">
+						<select class="form-control" name="time" id="time">
+							<option value="N/A">-- Preferred Time --</option>
+							<option value="8AM - 12NN">8AM - 12NN</option>
+							<option value="1PM - 5PM">1PM - 5PM</option>
+							<option value="6PM - 10PM">6PM - 10PM</option>
+						</select>
 					</div>
 
 					<!-- Course -->
@@ -77,37 +99,20 @@
 							<label class="form-check-label" for="others">Others</label>
 						</div>
 
-						<input type="text" class="form-control mt-2" id="otherVal" name="other" placeholder="Others" />
+						<input type="text" class="form-control mt-2" id="otherVal" name="other" placeholder="Others" autocomplete="off"/>
 					</div>
 
-					<!-- Gender -->
-					<div class="form-group col-sm-12 col-md-6">
-						<select class="form-control" name="gender" id="gender">
-							<option value="">-- Gender * --</option>
-							<option value="Male">Male</option>
-							<option value="Female">Female</option>
-						</select>
-					</div>
-
-					<!-- Preferred Time -->
-					<div class="form-group col-sm-12 col-md-6">
-						<select class="form-control" name="time" id="time">
-							<option value="N/A">-- Preferred Time --</option>
-							<option value="8AM - 12NN">8AM - 12NN</option>
-							<option value="1PM - 5PM">1PM - 5PM</option>
-							<option value="6PM - 10PM">6PM - 10PM</option>
-						</select>
-					</div>
+					
 
 					<div class="my-3 col-12">
-						<legend>You Account details:</legend>
+						<legend>Your login details:</legend>
 					</div>
 					<!-- Email -->
 					<div class="form-group col-sm-12 col-md-6">
-						<input type="email" class="form-control" id="email" placeholder="Email *" />
+						<input type="email" class="form-control" id="email" placeholder="Email *" autocomplete="off"/>
 					</div>
 					<div class="form-group col-sm-12 col-md-6">
-						<input type="email" class="form-control" id="retypedEmail" placeholder="Retype Email *" />
+						<input type="email" class="form-control" id="retypedEmail" placeholder="Retype Email *" autocomplete="off"/>
 					</div>
 
 					<!-- Password -->
@@ -156,7 +161,7 @@
 								<table class="table table-borderless">
 									<tbody>
 										<tr>
-											<th scope="row">First & Last Name:</th>
+											<th scope="row">Student Name:</th>
 											<td id="showName"></td>
 										</tr>
 										<tr>
@@ -198,7 +203,6 @@
 		</main>
 
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-		
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 		<script src="script.js"></script>

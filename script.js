@@ -76,9 +76,9 @@ $('#retypedPassword').on('input', function () {
 	}
 })
 
-
 // ON SUBMIT VALIDATION - saving to a variable first
 const fName = document.getElementById('fName')
+const mName = document.getElementById('mName')
 const lName = document.getElementById('lName')
 const address = document.getElementById('address')
 const email1 = document.getElementById('email')
@@ -98,6 +98,18 @@ const checkfName = () => {
 		showError(fName)
 	} else {
 		showSuccess(fName)
+		valid = true
+	}
+	return valid
+}
+
+const checkmName = () => {
+	let valid = false
+	const middleName = mName.value.trim()
+	if (!isRequired(middleName)) {
+		showError(mName)
+	} else {
+		showSuccess(mName)
 		valid = true
 	}
 	return valid
@@ -218,6 +230,7 @@ const checkPassword2 = () => {
 	return valid
 }
 
+
 const isRequired = (value) => (value === '' ? false : true)
 
 const showError = (input) => {
@@ -301,37 +314,6 @@ const checkPWValid = () => {
 	return true
 }
 
-const checkPWValid2 = () => {
-	let p = document.getElementById('retypedPassword').value
-	var errors = []
-
-	if (p.length < 8) {
-		errors.push('1')
-	}
-	if (p.search(/[A-z]/) < 0) {
-		errors.push('2')
-	}
-	if (p.search(/[0-9]/) < 0) {
-		errors.push('3')
-	}
-	if (p.search(/[\!\@\#\$\%\^\&\*\(\)\_\+\.\,\;\:\-]/) < 0) {
-		errors.push('4')
-	}
-
-	if (errors.length > 0) {
-		$('.errorMsg').show('slow')
-		$('#passValidation').show('slow')
-		setTimeout(function () {
-			$('#passValidation').hide('slow')
-			$('.errorMsg').hide('slow')
-		}, 3000)
-		return false
-	}
-	return true
-}
-
-// console.log(checkPWValid2())
-
 const form = document.getElementById('regForm')
 
 // Feedback feature to show either error or success instantly for "id" attribute
@@ -339,6 +321,9 @@ form.addEventListener('input', function (e) {
 	switch (e.target.id) {
 		case 'fName':
 			checkfName()
+			break
+		case 'mName':
+			checkmName()
 			break
 		case 'lName':
 			checklName()
@@ -383,6 +368,7 @@ form.addEventListener('submit', function (e) {
 
 	// validate forms
 	let isFNameValid = checkfName(),
+		isMNameValid = checkmName(),
 		isLNameValid = checklName(),
 		isAddValid = checkAddress(),
 		isEmailValid = checkEmail(),
@@ -392,10 +378,9 @@ form.addEventListener('submit', function (e) {
 		isCourseValid = checkCourse(),
 		isInfoValid = checkInfo(),
 		isGenderValid = checkGender(),
-		isCheckPWValid = checkPWValid(),
-		isCheckPWValid2 = checkPWValid2()
+		isCheckPWValid = checkPWValid()
 
-	let isFormValid = isFNameValid && isLNameValid && isAddValid && isEmailValid && isEmailValid2 && isPWValid && isPWValid2 && isCourseValid && isInfoValid && isGenderValid && isCheckPWValid && isCheckPWValid2
+	let isFormValid = isFNameValid && isMNameValid && isLNameValid && isAddValid && isEmailValid && isEmailValid2 && isPWValid && isPWValid2 && isCourseValid && isInfoValid && isGenderValid && isCheckPWValid
 
 	if (!isFormValid) {
 		$('#regModal').modal('hide')
@@ -408,6 +393,7 @@ form.addEventListener('submit', function (e) {
 $('#submit').click(function () {
 	let fname = $('#fName').val()
 	let lname = $('#lName').val()
+	let mname = $('#mName').val()
 	let email = $('#email').val()
 	let address = $('#address').val()
 	let phone = $('#phone').val()
@@ -422,7 +408,7 @@ $('#submit').click(function () {
 	let gender = $('#gender').val()
 	let time = $('#time').val()
 
-	$('#showName').html(fname + ' ' + lname)
+	$('#showName').html(fname + ' ' + mname + ' ' + lname)
 	$('#showEmail').html(email)
 	$('#showAdd').html(address)
 	$('#showPhone').html(phone)
